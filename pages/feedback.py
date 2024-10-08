@@ -32,7 +32,6 @@ posture_details = {
 }
 
 def main():
-    st.set_page_config(page_title="Posture Analysis")
     st.title("Posture Analysis")
     menu()
 

@@ -9,14 +9,14 @@ from clarifai.client.input import Inputs
 posture_details = {
     "Zhan Zhuang": {
         "image_path": "https://i0.wp.com/wanderingfist.wordpress.com/wp-content/uploads/2015/12/hanxingqiao3.jpg",  # Replace with actual path or URL
-        "prompt": os.getenv('VIS_ZZ_PROMPT'),
+        "prompt": "",
         "description": """
             Zhan Zhuang, or "standing like a tree", improves posture, balance, internal strength, mental focus, and overall vitality through sustained, meditative standing.
         """
     },
     "Santi Shi": {
         "image_path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiDH08_U8-iqUwX6Y5Ziwf3w7bF0DszjdayA&s",  # Replace with actual path or URL
-        "prompt": os.getenv('VIS_STS_PROMPT'),
+        "prompt": "",
         "description": """
             Santi Shi, or "three body posture", enhances balance, core and leg strength, flexibility, mental focus, and overall vitality.
         """

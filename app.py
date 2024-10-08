@@ -21,39 +21,29 @@ exercise_data = {
     },
     "goals": {
         "Reduce anxiety": [
-          "Cloud Hands",
-          "Corpse Pose",
-          "Zhan Zhuang (Standing Meditation)",
-          "Baduanjin Spinal Twist (Eight Brocades)",
-          "Child's Pose",
-          "Cat-Cow Pose"
+            "Cloud Hands",
+            "Corpse Pose",
+            "Zhan Zhuang (Standing Meditation)"
         ],
         "Improve mood": [
-          "Cloud Hands",
-          "Warrior II Pose",
-          "Zhan Zhuang (Standing Meditation)",
-          "Baduanjin Spinal Twist (Eight Brocades)",
-          "Cat-Cow Pose",
-          "Gentle Neck Stretches"
+            "Cloud Hands",
+            "Warrior II Pose",
+            "Zhan Zhuang (Standing Meditation)"
         ],
         "Stress relief": [
-          "Zhan Zhuang (Standing Meditation)",
-          "Corpse Pose",
-          "Baduanjin Spinal Twist (Eight Brocades)",
-          "Cloud Hands",
-          "Child's Pose"
+            "Zhan Zhuang (Standing Meditation)",
+            "Corpse Pose",
+            "Baduanjin Spinal Twist (Eight Brocades)"
         ],
         "Calm the mind": [
-          "Corpse Pose",
-          "Zhan Zhuang (Standing Meditation)",
-          "Baduanjin Spinal Twist (Eight Brocades)",
-          "Gentle Neck Stretches"
+            "Corpse Pose",
+            "Zhan Zhuang (Standing Meditation)",
+            "Baduanjin Spinal Twist (Eight Brocades)"
         ],
         "Increase mindfulness": [
-          "Cloud Hands",
-          "Warrior II Pose",
-          "Zhan Zhuang (Standing Meditation)",
-          "Baduanjin Holding Up the Heavens"
+            "Cloud Hands",
+            "Warrior II Pose",
+            "Zhan Zhuang (Standing Meditation)"
         ]
     },
     "mobility": {

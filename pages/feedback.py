@@ -79,12 +79,16 @@ def main():
                     model_id=MODEL_ID,
                     version_id=MODEL_VERSION_ID,
                     inputs=[
-                        resources_pb2.Input(
-                            data=resources_pb2.Data(
-                                text=resources_pb2.Text(raw=prompt),
-                                image=resources_pb2.Image(base64=bytes_data)
-                            )
-                        )
+                      resources_pb2.Input(
+                          data=resources_pb2.Data(
+                              text=resources_pb2.Text(
+                                  raw=prompt
+                              ),
+                              image=resources_pb2.Image(
+                                  base64=bytes_data
+                              )
+                          )
+                      )
                     ]
                 ),
                 metadata=metadata

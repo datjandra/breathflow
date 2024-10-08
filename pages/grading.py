@@ -15,7 +15,7 @@ from numpy.linalg import norm
 
 TL_API_KEY = os.getenv('TL_API_KEY')
 
-# Mapping between video names and corresponding .npy URLs
+# Mapping between video names and corresponding embedding URLs
 video_options = {
   "Yang Jun - Cloud Hands": {
       "video_url": "https://youtu.be/PrmMJWxGT44",

@@ -60,7 +60,7 @@ def main():
     st.image(image_path, caption=f"Example: {posture_type} Posture", use_column_width=True)
 
     # Uploading user image for analysis
-    uploaded_file = st.file_uploader("Please upload a picture of your standing posture.", type=["png", "jpg", "jpeg"])
+    uploaded_file = st.file_uploader("Please upload a picture of your posture.", type=["png", "jpg", "jpeg"])
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         if image is not None:

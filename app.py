@@ -1,7 +1,7 @@
 import streamlit as st
 
 # JSON structure for exercises and mappings
-{
+exercise_data = {
     "exercises": {
         "Cloud Hands": "https://www.youtube.com/watch?v=XXXXXXX",
         "Warrior II Pose": "https://www.youtube.com/watch?v=XXXXXXX",

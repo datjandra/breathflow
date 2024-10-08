@@ -93,7 +93,7 @@ def main():
     clip = VideoFileClip(video_path)
 
     # Trim the video to cutoff seconds or less
-    cutoff = 5
+    cutoff = 10
     duration = min(clip.duration, cutoff)  # Ensure it doesn't exceed cutoff seconds
     output_path = os.path.join(temp_dir, f"trimmed_{video_file.name}")
     ffmpeg_extract_subclip(video_path, 0, duration, targetname=output_path)

@@ -58,7 +58,7 @@ exercise_data = {
     }
 }
 
-# Streamlit form for intake
+# Form for intake
 st.title("Holistic Exercise Recommender")
 
 with st.form("exercise_form"):

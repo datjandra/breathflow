@@ -110,6 +110,6 @@ if submit_button:
     if recommended_exercises:
         for exercise in recommended_exercises:
             st.write(f"{exercise}")
-            # st.video(exercise_data["exercises"][exercise])
+            st.video(exercise_data["exercises"][exercise])
     else:
         st.write("No matching exercises found for your selections.")

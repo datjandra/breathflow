@@ -69,7 +69,7 @@ exercise_data = {
 }
 
 # Streamlit form for intake
-st.title("Personalized Exercise Recommender")
+st.title("Holistic Exercise Recommender")
 
 with st.form("exercise_form"):
     # User goal selection

@@ -103,8 +103,8 @@ if submit_button:
     st.write("Based on your input, here are the recommended exercises for you:")
 
     # Display exercises based on user selection
-    recommended_exercises = set(exercise_data["goals"][selected_goal]) & \
-                            set(exercise_data["mobility"][mobility_level]) & \
+    recommended_exercises = set(exercise_data["goals"][selected_goal]) | \
+                            set(exercise_data["mobility"][mobility_level]) | \
                             set(exercise_data["experience_level"][experience_level])
     
     if recommended_exercises:

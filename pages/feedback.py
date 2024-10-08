@@ -2,20 +2,8 @@ import os
 import streamlit as st
 from PIL import Image
 
-from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
-from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
-from clarifai_grpc.grpc.api.status import status_code_pb2
-
-USER_ID = 'openai'
-APP_ID = 'chat-completion'
-MODEL_ID = os.environ.get('VIS_MODEL_ID')
-MODEL_VERSION_ID = os.environ.get('VIS_MODEL_VERSION_ID')
-PAT = os.environ.get('PAT')
-
-channel = ClarifaiChannel.get_grpc_channel()
-stub = service_pb2_grpc.V2Stub(channel)
-metadata = (('authorization', 'Key ' + PAT),)
-userDataObject = resources_pb2.UserAppIDSet(user_id=USER_ID, app_id=APP_ID)
+from clarifai.client.model import Model
+from clarifai.client.input import Inputs
 
 # JSON-like object to store posture details
 posture_details = {
@@ -73,33 +61,9 @@ def main():
 
         bytes_data = uploaded_file.getvalue()
         with st.spinner('Analyzing image of posture...'):
-            post_model_outputs_response = stub.PostModelOutputs(
-                service_pb2.PostModelOutputsRequest(
-                    user_app_id=userDataObject,
-                    model_id=MODEL_ID,
-                    version_id=MODEL_VERSION_ID,
-                    inputs=[
-                      resources_pb2.Input(
-                          data=resources_pb2.Data(
-                              text=resources_pb2.Text(
-                                  raw=prompt
-                              ),
-                              image=resources_pb2.Image(
-                                  base64=bytes_data
-                              )
-                          )
-                      )
-                    ]
-                ),
-                metadata=metadata
-            )
-
-            if post_model_outputs_response.status.code != status_code_pb2.SUCCESS:
-                output = f"Post model outputs failed, status: {post_model_outputs_response.status.description}"
-                st.write(output)
-            else:
-                output = post_model_outputs_response.outputs[0]
-                st.markdown(output.data.text.raw)
+            inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
+            model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
+            st.markdown(model_prediction.outputs[0].data.text.raw)
 
 if __name__ == "__main__":
     main()

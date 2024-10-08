@@ -70,8 +70,8 @@ def get_grade(cosine_similarity, threshold=0.5):
       return 'F'
 
 def main():
-  st.title("Exercise Video Analysis")
   menu()
+  st.title("Exercise Video Analysis")
 
   selected_option = st.selectbox("Select an exercise video", list(video_options.keys()))
   video_url = video_options[selected_option]["video_url"]

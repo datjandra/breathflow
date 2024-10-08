@@ -3,7 +3,7 @@ import streamlit as st
 # JSON structure for exercises and mappings
 exercise_data = {
     "exercises": {
-        "Cloud Hands": "https://www.youtube.com/watch?v=XXXXXXX",
+        "Cloud Hands": "https://youtu.be/4YKqFrA8_Rs",
         "Warrior II Pose": "https://www.youtube.com/watch?v=XXXXXXX",
         "Zhan Zhuang (Standing Meditation)": "https://www.youtube.com/watch?v=XXXXXXX",
         "Baduanjin Spinal Twist (Eight Brocades)": "https://www.youtube.com/watch?v=XXXXXXX",

@@ -107,6 +107,8 @@ if submit_button:
                             set(exercise_data["mobility"][mobility_level]) & \
                             set(exercise_data["experience_level"][experience_level])
 
+    st.write(exercise_data["goals"][selected_goal]))
+    
     if recommended_exercises:
         for exercise in recommended_exercises:
             st.write(f"{exercise}")

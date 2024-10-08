@@ -21,14 +21,41 @@ exercise_data = {
         "Qigong - Spinal Twist (Spring Forest)": "https://www.youtube.com/watch?v=XXXXXXX"
     },
     "goals": {
-        "Improve mental health": [
-            "Cloud Hands", "Warrior II Pose", "Zhan Zhuang (Standing Meditation)", "Baduanjin Spinal Twist (Eight Brocades)",
-            "Child's Pose", "Corpse Pose", "Cat-Cow Pose"
+        "Reduce anxiety": [
+          "Cloud Hands (Tai Chi)",
+          "Corpse Pose (Yoga)",
+          "Zhan Zhuang (Standing Meditation - Tai Chi)",
+          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
+          "Child's Pose (Yoga)",
+          "Cat-Cow Pose (Yoga)"
         ],
-        "Physical rehabilitation": ["Gentle Neck Stretches", "Seated Forward Bend", "Restorative Bridge Pose", "Supported Child's Pose"],
-        "Increase flexibility": ["Cat-Cow Pose", "Seated Forward Bend", "Cloud Hands"],
-        "Enhance strength": ["Warrior II Pose", "Tai Chi - Single Whip", "Tai Chi - Brush Knee and Twist Step"],
-        "Stress relief": ["Zhan Zhuang (Standing Meditation)", "Corpse Pose", "Baduanjin Spinal Twist (Eight Brocades)"]
+        "Improve mood": [
+          "Cloud Hands (Tai Chi)",
+          "Warrior II Pose (Yoga)",
+          "Zhan Zhuang (Standing Meditation - Tai Chi)",
+          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
+          "Cat-Cow Pose (Yoga)",
+          "Gentle Neck Stretches (Qigong)"
+        ],
+        "Stress relief": [
+          "Zhan Zhuang (Standing Meditation - Tai Chi)",
+          "Corpse Pose (Yoga)",
+          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
+          "Cloud Hands (Tai Chi)",
+          "Child's Pose (Yoga)"
+        ],
+        "Calm the mind": [
+          "Corpse Pose (Yoga)",
+          "Zhan Zhuang (Standing Meditation - Tai Chi)",
+          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
+          "Gentle Neck Stretches (Qigong)"
+        ],
+        "Increase mindfulness": [
+          "Cloud Hands (Tai Chi)",
+          "Warrior II Pose (Yoga)",
+          "Zhan Zhuang (Standing Meditation - Tai Chi)",
+          "Basic Baduanjin Routine (Qigong - Eight Brocades)"
+        ]
     },
     "mobility": {
         "Limited": ["Restorative Bridge Pose", "Gentle Neck Stretches"],

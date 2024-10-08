@@ -61,8 +61,12 @@ def main():
 
         bytes_data = uploaded_file.getvalue()
         with st.spinner('Analyzing image of posture...'):
+
+            prompt = "What time of day is it?"
+            image_url = "https://samples.clarifai.com/metro-north.jpg"
+            
             inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
-            model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
+            model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_url=image_url, raw_text=prompt)], inference_params=inference_params)
             st.markdown(model_prediction.outputs[0].data.text.raw)
 
 if __name__ == "__main__":

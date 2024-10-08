@@ -8,34 +8,40 @@ from clarifai.client.input import Inputs
 # JSON-like object to store posture details
 posture_details = {
     "Zhan Zhuang": {
-        "image_path": "https://i0.wp.com/wanderingfist.wordpress.com/wp-content/uploads/2015/12/hanxingqiao3.jpg",  # Replace with actual path or URL
+        "image_path": "https://i0.wp.com/wanderingfist.wordpress.com/wp-content/uploads/2015/12/hanxingqiao3.jpg",
         "prompt": "Does the image show a correct zhan zhuang posture?",
         "description": """
             Zhan Zhuang, or "standing like a tree", improves posture, balance, internal strength, mental focus, and overall vitality through sustained, meditative standing.
         """
     },
-    "Santi Shi": {
-        "image_path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiDH08_U8-iqUwX6Y5Ziwf3w7bF0DszjdayA&s",  # Replace with actual path or URL
-        "prompt": "Does the image show a correct santi shi posture?",
+    "Corpse Pose": {
+        "image_path": "https://www.keralatourism.org/images/yoga/static-banner/large/Savasana_-_The_Corpse_Pose-07032020145736.jpg"
+        "prompt": "Does the image show a correct corpse pose?",
         "description": """
-            Santi Shi, or "three body posture", enhances balance, core and leg strength, flexibility, mental focus, and overall vitality.
+            The Corpse Pose (Savasana) promotes deep relaxation by calming the mind, reducing stress, and helping the body recover after practice.
+        """
+    },
+    "Warrior II Pose": {
+        "image_path": "https://cdn.yogajournal.com/wp-content/uploads/2021/12/Warrior-2-Pose_Andrew-Clark_2400x1350.jpeg"
+        "prompt": "Does the image show a correct warrior 2 pose?",
+        "description": """
+            The Warrior II Pose (Virabhadrasana II) strengthens the legs and core while enhancing focus and mental endurance, promoting balance between physical power and mental clarity.
         """
     }
 }
 
 def main():
     st.set_page_config(page_title="Posture Analysis")
-    st.title("Standing Posture Analysis")
+    st.title("Posture Analysis")
 
     st.markdown("""
-        ## Introduction to Standing Postures
+        ## Introduction to Posture Analysis
         
-        This page analyzes your standing postures, specifically focusing on two practices for health benefits: [Zhan Zhuang](https://en.wikipedia.org/wiki/Zhan_zhuang) and [Santi Shi](https://en.wikipedia.org/wiki/Xingyiquan).
-    """)
+        This page analyzes various postures, specifically focusing on practices for mind and body health benefits.
 
     # Select box for the posture type
     posture_type = st.selectbox(
-        "Select the type of standing posture for analysis:",
+        "Select the type of posture for analysis:",
         list(posture_details.keys()),
         index=0
     )

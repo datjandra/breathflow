@@ -107,8 +107,15 @@ if submit_button:
                             set(exercise_data["experience_level"][experience_level])
     
     if recommended_exercises:
-        for exercise in recommended_exercises:
-            st.write(f"{exercise}")
-            st.video(exercise_data["exercises"][exercise])
+        col1, col2 = st.columns(2)
+        for index, exercise in enumerate(recommended_exercises):
+            if index % 2 == 0:
+                with col1:
+                    st.write(f"{exercise}")
+                    st.video(exercise_data["exercises"][exercise])
+            else:
+                with col2:
+                    st.write(f"{exercise}")
+                    st.video(exercise_data["exercises"][exercise])
     else:
         st.write("No matching exercises found for your selections.")

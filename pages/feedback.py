@@ -38,7 +38,8 @@ def main():
         ## Introduction to Posture Analysis
         
         This page analyzes various postures, specifically focusing on practices for mind and body health benefits.
-
+    """)
+    
     # Select box for the posture type
     posture_type = st.selectbox(
         "Select the type of posture for analysis:",

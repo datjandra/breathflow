@@ -32,8 +32,8 @@ posture_details = {
 }
 
 def main():
-    st.title("Posture Analysis")
     menu()
+    st.title("Posture Analysis")
 
     st.markdown("""
         ## Introduction to Posture Analysis

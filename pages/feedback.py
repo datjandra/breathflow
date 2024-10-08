@@ -15,14 +15,14 @@ posture_details = {
         """
     },
     "Corpse Pose": {
-        "image_path": "https://www.keralatourism.org/images/yoga/static-banner/large/Savasana_-_The_Corpse_Pose-07032020145736.jpg"
+        "image_path": "https://www.keralatourism.org/images/yoga/static-banner/large/Savasana_-_The_Corpse_Pose-07032020145736.jpg",
         "prompt": "Does the image show a correct corpse pose?",
         "description": """
             The Corpse Pose (Savasana) promotes deep relaxation by calming the mind, reducing stress, and helping the body recover after practice.
         """
     },
     "Warrior II Pose": {
-        "image_path": "https://cdn.yogajournal.com/wp-content/uploads/2021/12/Warrior-2-Pose_Andrew-Clark_2400x1350.jpeg"
+        "image_path": "https://cdn.yogajournal.com/wp-content/uploads/2021/12/Warrior-2-Pose_Andrew-Clark_2400x1350.jpeg",
         "prompt": "Does the image show a correct warrior 2 pose?",
         "description": """
             The Warrior II Pose (Virabhadrasana II) strengthens the legs and core while enhancing focus and mental endurance, promoting balance between physical power and mental clarity.

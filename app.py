@@ -1,4 +1,5 @@
 import streamlit as st
+from menu import menu
 
 # JSON structure for exercises and mappings
 exercise_data = {
@@ -59,6 +60,7 @@ exercise_data = {
 }
 
 # Form for intake
+menu()
 st.title("Holistic Exercise Recommender")
 
 with st.form("exercise_form"):

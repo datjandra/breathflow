@@ -9,14 +9,14 @@ from clarifai.client.input import Inputs
 posture_details = {
     "Zhan Zhuang": {
         "image_path": "https://i0.wp.com/wanderingfist.wordpress.com/wp-content/uploads/2015/12/hanxingqiao3.jpg",  # Replace with actual path or URL
-        "prompt": "",
+        "prompt": "Does the image show a correct zhan zhuang posture?",
         "description": """
             Zhan Zhuang, or "standing like a tree", improves posture, balance, internal strength, mental focus, and overall vitality through sustained, meditative standing.
         """
     },
     "Santi Shi": {
         "image_path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiDH08_U8-iqUwX6Y5Ziwf3w7bF0DszjdayA&s",  # Replace with actual path or URL
-        "prompt": "",
+        "prompt": "Does the image show a correct santi shi posture?",
         "description": """
             Santi Shi, or "three body posture", enhances balance, core and leg strength, flexibility, mental focus, and overall vitality.
         """
@@ -62,11 +62,11 @@ def main():
         bytes_data = uploaded_file.getvalue()
         with st.spinner('Analyzing image of posture...'):
 
-            prompt = "What time of day is it?"
-            image_url = "https://samples.clarifai.com/metro-north.jpg"
+            # prompt = "What time of day is it?"
+            # image_url = "https://samples.clarifai.com/metro-north.jpg"
             
             inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
-            model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_url=image_url, raw_text=prompt)], inference_params=inference_params)
+            model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
             st.markdown(model_prediction.outputs[0].data.text.raw)
 
 if __name__ == "__main__":

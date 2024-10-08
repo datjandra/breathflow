@@ -45,39 +45,44 @@ exercise_data = {
 # Streamlit form for intake
 st.title("Personalized Exercise Recommender")
 
-# User goal selection
-st.header("Your Wellness Goals")
-selected_goal = st.selectbox(
-    "Select your main goal",
-    options=list(exercise_data["goals"].keys())
-)
+with st.form("exercise_form"):
+    # User goal selection
+    st.header("Your Wellness Goals")
+    selected_goal = st.selectbox(
+        "Select your main goal",
+        options=list(exercise_data["goals"].keys())
+    )
 
-# User mobility level
-st.header("Your Mobility Level")
-mobility_level = st.selectbox(
-    "Select your mobility level",
-    options=list(exercise_data["mobility"].keys())
-)
+    # User mobility level
+    st.header("Your Mobility Level")
+    mobility_level = st.selectbox(
+        "Select your mobility level",
+        options=list(exercise_data["mobility"].keys())
+    )
 
-# User experience level
-st.header("Your Experience Level")
-experience_level = st.selectbox(
-    "Select your experience level",
-    options=list(exercise_data["experience_level"].keys())
-)
+    # User experience level
+    st.header("Your Experience Level")
+    experience_level = st.selectbox(
+        "Select your experience level",
+        options=list(exercise_data["experience_level"].keys())
+    )
 
-# Recommendations based on input
-st.header("Recommended Exercises")
-st.write("Based on your input, here are the recommended exercises for you:")
+    # Submit button
+    submit_button = st.form_submit_button("Show Recommended Exercises")
 
-# Display exercises based on user selection
-recommended_exercises = set(exercise_data["goals"][selected_goal]) & \
-                        set(exercise_data["mobility"][mobility_level]) & \
-                        set(exercise_data["experience_level"][experience_level])
+# Recommendations based on input after form submission
+if submit_button:
+    st.header("Recommended Exercises")
+    st.write("Based on your input, here are the recommended exercises for you:")
 
-if recommended_exercises:
-    for exercise in recommended_exercises:
-        st.write(f"- {exercise}")
-        st.write(f"[Watch here]({exercise_data['exercises'][exercise]})")
-else:
-    st.write("No matching exercises found for your selections.")
+    # Display exercises based on user selection
+    recommended_exercises = set(exercise_data["goals"][selected_goal]) & \
+                            set(exercise_data["mobility"][mobility_level]) & \
+                            set(exercise_data["experience_level"][experience_level])
+
+    if recommended_exercises:
+        for exercise in recommended_exercises:
+            st.write(f"- {exercise}")
+            st.video(exercise_data["exercises"][exercise])
+    else:
+        st.write("No matching exercises found for your selections.")

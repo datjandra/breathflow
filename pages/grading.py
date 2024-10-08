@@ -19,15 +19,15 @@ TL_API_KEY = os.getenv('TL_API_KEY')
 video_options = {
   "Yang Jun - Cloud Hands": {
       "video_url": "https://youtu.be/PrmMJWxGT44",
-      "npy_url": "https://datjandra.github.io/taijiflow/yang_jun.npy"
+      "npy_url": "https://datjandra.github.io/breathflow/yang_jun.npy"
   },
   "Vive Health - Cat Cow Pose": {
-      "video_url": "https://youtu.be/G9B8qciliKc",
-      "npy_url": "https://datjandra.github.io/taijiflow/yang_jun.npy"
+      "video_url": "https://youtu.be/s3hc0UnFyio",
+      "npy_url": "https://datjandra.github.io/breathflow/catcow.npy"
   },
   "Janice Tucker - Spinal Twist (Eight Brocades)": {
-      "video_url": "https://youtu.be/4Hg6neT7p4c",
-      "npy_url": "https://datjandra.github.io/taijiflow/yang_jun.npy"
+      "video_url": "https://youtu.be/fpQmwezSkrI",
+      "npy_url": "https://datjandra.github.io/breathflow/wagtail.npy"
   }
 }
 

@@ -1,6 +1,7 @@
 import os
 import streamlit as st
 from PIL import Image
+from menu import menu
 
 from clarifai.client.model import Model
 from clarifai.client.input import Inputs
@@ -33,6 +34,7 @@ posture_details = {
 def main():
     st.set_page_config(page_title="Posture Analysis")
     st.title("Posture Analysis")
+    menu()
 
     st.markdown("""
         ## Introduction to Posture Analysis

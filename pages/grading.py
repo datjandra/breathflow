@@ -13,6 +13,8 @@ from twelvelabs.models.embed import EmbeddingsTask
 import numpy as np
 from numpy.linalg import norm
 
+from menu import menu
+
 TL_API_KEY = os.getenv('TL_API_KEY')
 
 # Mapping between video names and corresponding embedding URLs
@@ -69,6 +71,7 @@ def get_grade(cosine_similarity, threshold=0.5):
 
 def main():
   st.title("Exercise Video Analysis")
+  menu()
 
   selected_option = st.selectbox("Select an exercise video", list(video_options.keys()))
   video_url = video_options[selected_option]["video_url"]

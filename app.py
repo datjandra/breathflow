@@ -4,21 +4,20 @@ import streamlit as st
 exercise_data = {
     "exercises": {
         "Cloud Hands": "https://youtu.be/4YKqFrA8_Rs",
-        "Warrior II Pose": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Zhan Zhuang (Standing Meditation)": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Baduanjin Spinal Twist (Eight Brocades)": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Child's Pose": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Corpse Pose": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Cat-Cow Pose": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Gentle Neck Stretches": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Seated Forward Bend": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Restorative Bridge Pose": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Supported Child's Pose": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Tai Chi - Single Whip": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Tai Chi - Brush Knee and Twist Step": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Tai Chi - Grasp the Bird's Tail": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Basic Baduanjin Routine": "https://www.youtube.com/watch?v=XXXXXXX",
-        "Qigong - Spinal Twist (Spring Forest)": "https://www.youtube.com/watch?v=XXXXXXX"
+        "Warrior II Pose": "https://youtu.be/Mn6RSIRCV3w",
+        "Zhan Zhuang (Standing Meditation)": "https://youtu.be/yZwdA158sR4",
+        "Baduanjin Spinal Twist (Eight Brocades)": "https://youtu.be/4Hg6neT7p4c",
+        "Child's Pose": "https://youtu.be/2MJGg-dUKh0",
+        "Corpse Pose": "https://youtu.be/bz0aH1706bU",
+        "Cat-Cow Pose": "https://youtu.be/G9B8qciliKc",
+        "Gentle Neck Stretches": "https://youtu.be/H5h54Q0wpps",
+        "Seated Forward Bend": "https://youtu.be/1mwwxcMDDy8",
+        "Restorative Bridge Pose": "https://youtu.be/52vSL_Z_Zy4",
+        "Supported Child's Pose": "https://youtu.be/DK1JRP_4tZ0",
+        "Tai Chi - Single Whip": "https://youtu.be/1dLchY8R6tU",
+        "Tai Chi - Brush Knee and Twist Step": "https://youtu.be/x_rxOa7f09Y",
+        "Tai Chi - Grasp the Bird's Tail": "https://youtu.be/h1XUftdMPBg",
+        "Baduanjin Holding Up the Heavens": "https://youtu.be/NoYUAXIYLvY"
     },
     "goals": {
         "Reduce anxiety": [
@@ -54,7 +53,7 @@ exercise_data = {
           "Cloud Hands",
           "Warrior II Pose",
           "Zhan Zhuang (Standing Meditation)",
-          "Basic Baduanjin Routine"
+          "Baduanjin Holding Up the Heavens"
         ]
     },
     "mobility": {

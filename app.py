@@ -1,7 +1,7 @@
 import streamlit as st
 
 # JSON structure for exercises and mappings
-exercise_data = {
+{
     "exercises": {
         "Cloud Hands": "https://www.youtube.com/watch?v=XXXXXXX",
         "Warrior II Pose": "https://www.youtube.com/watch?v=XXXXXXX",
@@ -22,39 +22,39 @@ exercise_data = {
     },
     "goals": {
         "Reduce anxiety": [
-          "Cloud Hands (Tai Chi)",
-          "Corpse Pose (Yoga)",
-          "Zhan Zhuang (Standing Meditation - Tai Chi)",
-          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
-          "Child's Pose (Yoga)",
-          "Cat-Cow Pose (Yoga)"
+          "Cloud Hands",
+          "Corpse Pose",
+          "Zhan Zhuang (Standing Meditation)",
+          "Baduanjin Spinal Twist (Eight Brocades)",
+          "Child's Pose",
+          "Cat-Cow Pose"
         ],
         "Improve mood": [
-          "Cloud Hands (Tai Chi)",
-          "Warrior II Pose (Yoga)",
-          "Zhan Zhuang (Standing Meditation - Tai Chi)",
-          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
-          "Cat-Cow Pose (Yoga)",
-          "Gentle Neck Stretches (Qigong)"
+          "Cloud Hands",
+          "Warrior II Pose",
+          "Zhan Zhuang (Standing Meditation)",
+          "Baduanjin Spinal Twist (Eight Brocades)",
+          "Cat-Cow Pose",
+          "Gentle Neck Stretches"
         ],
         "Stress relief": [
-          "Zhan Zhuang (Standing Meditation - Tai Chi)",
-          "Corpse Pose (Yoga)",
-          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
-          "Cloud Hands (Tai Chi)",
-          "Child's Pose (Yoga)"
+          "Zhan Zhuang (Standing Meditation)",
+          "Corpse Pose",
+          "Baduanjin Spinal Twist (Eight Brocades)",
+          "Cloud Hands",
+          "Child's Pose"
         ],
         "Calm the mind": [
-          "Corpse Pose (Yoga)",
-          "Zhan Zhuang (Standing Meditation - Tai Chi)",
-          "Baduanjin Spinal Twist (Eight Brocades - Qigong)",
-          "Gentle Neck Stretches (Qigong)"
+          "Corpse Pose",
+          "Zhan Zhuang (Standing Meditation)",
+          "Baduanjin Spinal Twist (Eight Brocades)",
+          "Gentle Neck Stretches"
         ],
         "Increase mindfulness": [
-          "Cloud Hands (Tai Chi)",
-          "Warrior II Pose (Yoga)",
-          "Zhan Zhuang (Standing Meditation - Tai Chi)",
-          "Basic Baduanjin Routine (Qigong - Eight Brocades)"
+          "Cloud Hands",
+          "Warrior II Pose",
+          "Zhan Zhuang (Standing Meditation)",
+          "Basic Baduanjin Routine"
         ]
     },
     "mobility": {
@@ -106,8 +106,6 @@ if submit_button:
     recommended_exercises = set(exercise_data["goals"][selected_goal]) & \
                             set(exercise_data["mobility"][mobility_level]) & \
                             set(exercise_data["experience_level"][experience_level])
-
-    st.write(exercise_data["goals"][selected_goal])
     
     if recommended_exercises:
         for exercise in recommended_exercises:

@@ -1,6 +1,6 @@
 streamlit
 requests
-clarifai-grpc
+clarifai
 pillow
 moviepy
 twelvelabs

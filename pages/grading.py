@@ -81,7 +81,7 @@ def main():
   **Instructions:**
   1. Select an exercise video from the dropdown menu.
   2. Upload your own exercise video (MP4, MOV or MPEG4 format).
-  3. The video will be trimmed to the first few seconds for analysis.
+  3. Your video will be trimmed to the first few seconds for analysis.
   4. A grade will be assigned based on the similarity between your movements and the reference video.
   """)
 

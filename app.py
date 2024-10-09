@@ -192,14 +192,16 @@ if submit_button:
             title = exercise
             description = exercise_data["exercises"][exercise]["description"]
             video_url = exercise_data["exercises"][exercise]["url"]
-            
+
+            tooltip = f'<span title="{description}">{title}</span>'
+
             if index % 2 == 0:
                 with col1:
-                    st.write(f"{title} - {description}")
+                    st.markdown(f"{tooltip}", unsafe_allow_html=True)
                     st.video(video_url)
             else:
                 with col2:
-                    st.write(f"{title} - {description}")
+                    st.markdown(f"{tooltip}", unsafe_allow_html=True)
                     st.video(video_url)
     else:
         st.write("No matching exercises found for your selections.")

@@ -61,7 +61,7 @@ exercise_data = {
 
 # Form for intake
 menu()
-st.title("Holistic Exercise Recommender")
+st.title("Holistic Exercise Recommendations")
 
 with st.form("exercise_form"):
     # User goal selection

@@ -63,6 +63,49 @@ exercise_data = {
 menu()
 st.title("Holistic Exercise Recommendations")
 
+# Add BMI and Protein Calculator Section
+st.header("Calculate Your BMI and Protein Intake")
+
+# Create inputs for height, weight, and activity level
+height = st.number_input("Enter your height (in cm):", min_value=0, step=1)
+weight = st.number_input("Enter your weight (in kg):", min_value=0, step=1)
+
+
+# Protein intake based on activity level
+activity_level = st.selectbox(
+    "Select your activity level",
+    ["Sedentary", "Moderately active", "Active", "Very active"]
+)
+
+# BMI Calculation
+if height > 0 and weight > 0:
+    height_in_meters = height / 100  # Convert height to meters
+    bmi = weight / (height_in_meters ** 2)
+    st.write(f"**Your BMI is:** {bmi:.2f}")
+
+    # BMI interpretation
+    if bmi < 18.5:
+        st.write("You are underweight.")
+    elif 18.5 <= bmi < 24.9:
+        st.write("You have a normal weight.")
+    elif 25 <= bmi < 29.9:
+        st.write("You are overweight.")
+    else:
+        st.write("You are in the obese category.")
+
+# Protein Intake Calculation
+if weight > 0:
+    if activity_level == "Sedentary":
+        protein_intake = weight * 0.8
+    elif activity_level == "Moderately active":
+        protein_intake = weight * 1.2
+    elif activity_level == "Active":
+        protein_intake = weight * 1.6
+    else:
+        protein_intake = weight * 2.0
+
+    st.write(f"**Recommended daily protein intake:** {protein_intake:.2f} grams")
+
 with st.form("exercise_form"):
     # User goal selection
     st.header("Your Wellness Goals")

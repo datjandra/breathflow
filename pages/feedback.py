@@ -63,7 +63,8 @@ def main():
     uploaded_file = st.file_uploader("Please upload a picture of your posture.", type=["png", "jpg", "jpeg"])
 
     # Option to take a photo using the camera
-    camera_input = st.camera_input("Take a picture of your posture.")
+    enable = st.checkbox("Enable camera")
+    camera_input = st.camera_input("Take a picture of your posture.", disabled=not enable)
     
     if uploaded_file is not None:
         image = Image.open(uploaded_file)

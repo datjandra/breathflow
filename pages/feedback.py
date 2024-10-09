@@ -61,6 +61,10 @@ def main():
 
     # Uploading user image for analysis
     uploaded_file = st.file_uploader("Please upload a picture of your posture.", type=["png", "jpg", "jpeg"])
+
+    # Option to take a photo using the camera
+    camera_input = st.camera_input("Take a picture of your posture.")
+    
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         if image is not None:
@@ -71,6 +75,19 @@ def main():
             inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
             model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
             st.markdown(model_prediction.outputs[0].data.text.raw)
+
+    elif camera_input is not None:
+        # Display captured image
+        image = Image.open(camera_input)
+        if image is not None:
+            st.image(image, caption='Captured Image', use_column_width=True)
+
+        bytes_data = camera_input.getvalue()
+
+    # Save the captured image to the server
+    with open(f'uploads/captured_image.png', 'wb') as f:
+        f.write(camera_input.getvalue())
+        
 
 if __name__ == "__main__":
     main()

@@ -84,11 +84,6 @@ def main():
             st.image(image, caption='Captured Image', use_column_width=True)
 
         bytes_data = camera_input.getvalue()
-
-    # Save the captured image to the server
-    with open(f'uploads/captured_image.png', 'wb') as f:
-        f.write(camera_input.getvalue())
         
-
 if __name__ == "__main__":
     main()

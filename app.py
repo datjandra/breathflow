@@ -104,6 +104,12 @@ exercise_data = {
     }
 }
 
+# Helper function to limit text to a number of words
+def limit_description(description, word_limit=30):
+    words = description.split()
+    return ' '.join(words[:word_limit]) + ('...' if len(words) > word_limit else '')
+
+
 # Form for intake
 menu()
 st.title("Holistic Exercise Recommendations")
@@ -192,16 +198,21 @@ if submit_button:
             title = exercise
             description = exercise_data["exercises"][exercise]["description"]
             video_url = exercise_data["exercises"][exercise]["url"]
-
-            tooltip = f'<span title="{description}">{title}</span>'
+            short_description = limit_description(description, word_limit=30)  # Limit to 30 words
 
             if index % 2 == 0:
                 with col1:
-                    st.markdown(f"{tooltip}", unsafe_allow_html=True)
+                    st.write(f"{title}")
+                    st.write(short_description)
+                    with st.expander("Read More"):
+                        st.write(description)
                     st.video(video_url)
             else:
                 with col2:
-                    st.markdown(f"{tooltip}", unsafe_allow_html=True)
+                    st.write(f"{title}")
+                    st.write(short_description)
+                    with st.expander("Read More"):
+                        st.write(description)
                     st.video(video_url)
     else:
         st.write("No matching exercises found for your selections.")

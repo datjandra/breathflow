@@ -4,21 +4,66 @@ from menu import menu
 # JSON structure for exercises and mappings
 exercise_data = {
     "exercises": {
-        "Cloud Hands": "https://youtu.be/4YKqFrA8_Rs",
-        "Warrior II Pose": "https://youtu.be/Mn6RSIRCV3w",
-        "Zhan Zhuang (Standing Meditation)": "https://youtu.be/yZwdA158sR4",
-        "Baduanjin Spinal Twist (Eight Brocades)": "https://youtu.be/4Hg6neT7p4c",
-        "Child's Pose": "https://youtu.be/2MJGg-dUKh0",
-        "Corpse Pose": "https://youtu.be/bz0aH1706bU",
-        "Cat-Cow Pose": "https://youtu.be/G9B8qciliKc",
-        "Gentle Neck Stretches": "https://youtu.be/H5h54Q0wpps",
-        "Seated Forward Bend": "https://youtu.be/1mwwxcMDDy8",
-        "Restorative Bridge Pose": "https://youtu.be/52vSL_Z_Zy4",
-        "Supported Child's Pose": "https://youtu.be/DK1JRP_4tZ0",
-        "Tai Chi - Single Whip": "https://youtu.be/1dLchY8R6tU",
-        "Tai Chi - Brush Knee and Twist Step": "https://youtu.be/x_rxOa7f09Y",
-        "Tai Chi - Grasp the Bird's Tail": "https://youtu.be/h1XUftdMPBg",
-        "Baduanjin Holding Up the Heavens": "https://youtu.be/NoYUAXIYLvY"
+        "Cloud Hands": {
+            "url": "https://youtu.be/4YKqFrA8_Rs",
+            "description": "Cloud Hands promotes fluid movement and encourages mindfulness, helping to reduce anxiety and improve mood."
+        },
+        "Warrior II Pose": {
+            "url": "https://youtu.be/Mn6RSIRCV3w",
+            "description": "Warrior II Pose fosters strength and stability while enhancing confidence and focus, making it effective for improving mood."
+        },
+        "Zhan Zhuang (Standing Meditation)": {
+            "url": "https://youtu.be/yZwdA158sR4",
+            "description": "Zhan Zhuang is a standing meditation that cultivates inner calm and presence, reducing stress and anxiety."
+        },
+        "Baduanjin Spinal Twist (Eight Brocades)": {
+            "url": "https://youtu.be/4Hg6neT7p4c",
+            "description": "The Baduanjin Spinal Twist increases flexibility and releases tension, which helps calm the mind and relieve stress."
+        },
+        "Child's Pose": {
+            "url": "https://youtu.be/2MJGg-dUKh0",
+            "description": "Child's Pose encourages relaxation and introspection, providing a sense of safety that can improve emotional well-being."
+        },
+        "Corpse Pose": {
+            "url": "https://youtu.be/bz0aH1706bU",
+            "description": "Corpse Pose promotes deep relaxation and mental clarity, helping to alleviate stress and anxiety."
+        },
+        "Cat-Cow Pose": {
+            "url": "https://youtu.be/G9B8qciliKc",
+            "description": "Cat-Cow Pose enhances body awareness and encourages a mindful connection between breath and movement, supporting emotional balance."
+        },
+        "Gentle Neck Stretches": {
+            "url": "https://youtu.be/H5h54Q0wpps",
+            "description": "Gentle Neck Stretches release physical tension and promote relaxation, which can alleviate anxiety and improve mood."
+        },
+        "Seated Forward Bend": {
+            "url": "https://youtu.be/1mwwxcMDDy8",
+            "description": "Seated Forward Bend fosters introspection and calmness, providing a grounding effect that can help reduce stress."
+        },
+        "Restorative Bridge Pose": {
+            "url": "https://youtu.be/52vSL_Z_Zy4",
+            "description": "Restorative Bridge Pose encourages relaxation and emotional release, contributing to a sense of tranquility."
+        },
+        "Supported Child's Pose": {
+            "url": "https://youtu.be/DK1JRP_4tZ0",
+            "description": "Supported Child's Pose promotes deep relaxation and self-care, helping to reduce anxiety and stress."
+        },
+        "Tai Chi - Single Whip": {
+            "url": "https://youtu.be/1dLchY8R6tU",
+            "description": "Single Whip enhances mindfulness and focus through graceful movement, reducing stress and improving emotional well-being."
+        },
+        "Tai Chi - Brush Knee and Twist Step": {
+            "url": "https://youtu.be/x_rxOa7f09Y",
+            "description": "Brush Knee and Twist Step fosters balance and mental clarity, aiding in the reduction of anxiety and promoting calmness."
+        },
+        "Tai Chi - Grasp the Bird's Tail": {
+            "url": "https://youtu.be/h1XUftdMPBg",
+            "description": "Grasp the Bird's Tail cultivates mindfulness and fluidity in movement, enhancing mental focus and reducing stress."
+        },
+        "Baduanjin Holding Up the Heavens": {
+            "url": "https://youtu.be/NoYUAXIYLvY",
+            "description": "Holding Up the Heavens enhances emotional stability and promotes a sense of calm, helping to reduce anxiety."
+        }
     },
     "goals": {
         "Reduce anxiety": [
@@ -144,13 +189,19 @@ if submit_button:
     if recommended_exercises:
         col1, col2 = st.columns(2)
         for index, exercise in enumerate(recommended_exercises):
+            title = exercise
+            description = exercise_data["exercises"][exercise]["description"]
+            video_url = exercise_data["exercises"][exercise]["url"]
+            
             if index % 2 == 0:
                 with col1:
-                    st.write(f"{exercise}")
-                    st.video(exercise_data["exercises"][exercise])
+                    st.write(f"### {title}")
+                    st.write(description)
+                    st.video(video_url)
             else:
                 with col2:
-                    st.write(f"{exercise}")
-                    st.video(exercise_data["exercises"][exercise])
+                    st.write(f"### {title}")
+                    st.write(description)
+                    st.video(video_url)
     else:
         st.write("No matching exercises found for your selections.")

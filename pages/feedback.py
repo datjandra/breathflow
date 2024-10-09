@@ -32,9 +32,10 @@ posture_details = {
 }
 
 def analyze_posture(bytes_data, prompt):
-    inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
-    model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
-    st.markdown(model_prediction.outputs[0].data.text.raw)
+    with st.spinner('Analyzing image of posture...'):
+        inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
+        model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
+        st.markdown(model_prediction.outputs[0].data.text.raw)
 
 def main():
     menu()
@@ -77,11 +78,8 @@ def main():
             st.image(image, caption="Uploaded Posture Image", use_column_width=True)
 
         bytes_data = uploaded_file.getvalue()
-        with st.spinner('Analyzing image of posture...'):
-            inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
-            model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
-            st.markdown(model_prediction.outputs[0].data.text.raw)
-
+        analyze_posture(bytes_data, prompt)
+        
     elif camera_input is not None:
         # Display captured image
         image = Image.open(camera_input)

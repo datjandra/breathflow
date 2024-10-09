@@ -74,14 +74,19 @@ def main():
     uploaded_file = st.file_uploader("Please upload a picture of your posture.", type=["png", "jpg", "jpeg"])
 
     # Option to take a photo using the camera
-    enable = st.checkbox("Enable camera")
-    camera_input = st.camera_input("Take a picture of your posture.", disabled=not enable)
+    enable_camera = st.checkbox("Enable camera")
+    camera_input = st.camera_input("Take a picture of your posture.", disabled=not enable_camera)
+
+    # If the checkbox is checked, clear the uploaded file
+    if enable_camera:
+        uploaded_file = None
     
     if uploaded_file is not None:
         analyze_posture(uploaded_file, prompt)        
     elif camera_input is not None:
-        # Display captured image
         analyze_posture(camera_input, prompt)
+    else:
+        st.info("Please upload an image or take a picture.")
         
 if __name__ == "__main__":
     main()

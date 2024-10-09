@@ -195,12 +195,12 @@ if submit_button:
             
             if index % 2 == 0:
                 with col1:
-                    st.write(f"### {title}")
+                    st.write(f"{title}")
                     st.write(description)
                     st.video(video_url)
             else:
                 with col2:
-                    st.write(f"### {title}")
+                    st.write(f"{title}")
                     st.write(description)
                     st.video(video_url)
     else:

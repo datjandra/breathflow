@@ -73,6 +73,18 @@ def main():
   menu()
   st.title("Exercise Video Analysis")
 
+  # Brief description and instructions
+  st.write("""
+  This tool allows you to analyze your exercise videos by comparing them with reference videos. 
+  Based on the similarity between your movements and the reference video, a grade will be assigned.
+  
+  **Instructions:**
+  1. Select an exercise video from the dropdown menu.
+  2. Upload your own exercise video (MP4 or MOV format).
+  3. The video will be trimmed to the first few seconds for analysis.
+  4. A grade will be assigned based on the similarity between your movements and the reference video.
+  """)
+
   selected_option = st.selectbox("Select an exercise video", list(video_options.keys()))
   video_url = video_options[selected_option]["video_url"]
   npy_url = video_options[selected_option]["npy_url"]

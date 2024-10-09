@@ -31,7 +31,12 @@ posture_details = {
     }
 }
 
-def analyze_posture(bytes_data, prompt):
+def analyze_posture(image_source, prompt):
+    image = Image.open(image_source)
+    if image is not None:
+        st.image(image, caption="Posture Image", use_column_width=True)
+
+    bytes_data = image_source.getvalue()
     with st.spinner('Analyzing image of posture...'):
         inference_params = dict(temperature=0.2, max_tokens=256, top_p=0.9)
         model_prediction = Model("https://clarifai.com/openai/chat-completion/models/gpt-4o").predict(inputs = [Inputs.get_multimodal_input(input_id="", image_bytes=bytes_data, raw_text=prompt)], inference_params=inference_params)
@@ -69,25 +74,19 @@ def main():
     uploaded_file = st.file_uploader("Please upload a picture of your posture.", type=["png", "jpg", "jpeg"])
 
     # Option to take a photo using the camera
-    enable = st.checkbox("Enable camera")
-    camera_input = st.camera_input("Take a picture of your posture.", disabled=not enable)
+    enable_camera = st.checkbox("Enable camera")
+    camera_input = st.camera_input("Take a picture of your posture.", disabled=not enable_camera)
+
+    # If the checkbox is checked, clear the uploaded file
+    if enable_camera:
+        uploaded_file = None
     
     if uploaded_file is not None:
-        image = Image.open(uploaded_file)
-        if image is not None:
-            st.image(image, caption="Uploaded Posture Image", use_column_width=True)
-
-        bytes_data = uploaded_file.getvalue()
-        analyze_posture(bytes_data, prompt)
-        
+        analyze_posture(uploaded_file, prompt)        
     elif camera_input is not None:
-        # Display captured image
-        image = Image.open(camera_input)
-        if image is not None:
-            st.image(image, caption='Captured Image', use_column_width=True)
-
-        bytes_data = camera_input.getvalue()
-        analyze_posture(bytes_data, prompt)
+        analyze_posture(camera_input, prompt)
+    else:
+        st.info("Please upload an image or take a picture.")
         
 if __name__ == "__main__":
     main()

@@ -205,12 +205,12 @@ if submit_button:
 
             if index % 2 == 0:
                 with col1:
-                    st.write(f"### {title}")
+                    st.write(f"**{title}**")
                     st.markdown(f'<div class="description-box">{description}</div>', unsafe_allow_html=True)
                     st.video(video_url)
             else:
                 with col2:
-                    st.write(f"### {title}")
+                    st.write(f"**{title}**")
                     st.markdown(f'<div class="description-box">{description}</div>', unsafe_allow_html=True)
                     st.video(video_url)
     else:
